@@ -13,6 +13,18 @@ from cv_bridge import CvBridge, CvBridgeError;
 #cv2.namedWindow("test")
 
 with Vimba() as vimba:
+    #camera info
+    camera_info_msg = CameraInfo();
+    camera_info_msg.header.frame_id = "avt_manta";
+    camera_info_msg.width = 1624;
+    camera_info_msg.height = 1234;
+    camera_info_msg.K = [1792.707269, 0.0, 821.895887, 0.0, 1790.871098, 624.859714, 0.0, 0.0, 1.0];
+    camera_info_msg.D = [-0.225015, 0.358593, -0.005422, 0.009070, 0.0];
+    camera_info_msg.R = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0];
+    camera_info_msg.P = [1736.461670, 0.0, 834.094334, 0.0, 0.0, 1751.635254, 621.266132, 0.0, 0.0, 0.0, 1.0, 0.0];
+    camera_info_msg.distortion_model = "narrow_stereo";
+    ##########
+
     system = vimba.getSystem()
 
     system.runFeatureCommand("GeVDiscoveryAllOnce")
@@ -33,7 +45,7 @@ with Vimba() as vimba:
     try:
         #gigE camera
         c0.ExposureAuto = "Off";
-	c0.ExposureTimeAbs = 60000;
+	c0.ExposureTimeAbs = 70000;
 	print(c0.GevSCPSPacketSize)
         print(c0.StreamBytesPerSecond)
  	print(c0.AcquisitionFrameCount);
@@ -65,7 +77,8 @@ with Vimba() as vimba:
     frame.queueFrameCapture();
 
     rospy.init_node('pymba_publisher');
-    image_pub  	= rospy.Publisher("/reefbot/image_raw", Image, queue_size=1);
+    image_pub  	= rospy.Publisher("/avt_manta/image_raw", Image, queue_size=1);
+    cam_info_pub = rospy.Publisher("/avt_manta/camera_info", CameraInfo, queue_size=1);
     bridge  	= CvBridge();
 
     while not rospy.is_shutdown():
@@ -93,6 +106,7 @@ with Vimba() as vimba:
             #cv2.imshow("test",img)
  	    ##
  	    image_pub.publish(bridge.cv2_to_imgmsg(img, "mono8"));
+	    cam_info_pub.publish(camera_info_msg);
         framecount+=1
 	#print(img);
  	#print(framecount);

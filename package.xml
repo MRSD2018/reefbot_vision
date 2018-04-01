@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>reefbot-pymba</name>
+  <name>reefbot_pymba</name>
   <version>0.0.0</version>
   <description>The reefbot-pymba package</description>
 

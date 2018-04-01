@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+    <include file="$(find reefbot_pymba)/launch/reefbot_april.launch"/>
+
+    <node name="reefbot_pymba" pkg="reefbot_pymba" type="pymba_publisher.py"/>
+    
+    <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+        <remap from="image" to="/avt_manta/image_raw" />
+ 	<param name="autosize" value="true" />
+    </node>
+</launch>

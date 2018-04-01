@@ -1,39 +1,39 @@
 *.py[cod]
 
 # C extensions
-*.so
+pymba-setup/*.so
 
 # Packages
-*.egg
-*.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
+pymba-setup/*.egg
+pymba-setup/*.egg-info
+pymba-setup/dist
+pymba-setup/build
+pymba-setup/eggs
+pymba-setup/parts
+pymba-setup/bin
+pymba-setup/var
+pymba-setup/sdist
+pymba-setup/develop-eggs
+pymba-setup/.installed.cfg
+pymba-setup/lib
+pymba-setup/lib64
 
 # Installer logs
-pip-log.txt
+pymba-setup/pip-log.txt
 
 # Unit test / coverage reports
-.coverage
-.tox
-nosetests.xml
+pymba-setup/.coverage
+pymba-setup/.tox
+pymba-setup/nosetests.xml
 
 # Translations
-*.mo
+pymba-setup/*.mo
 
 # Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
+pymba-setup/.mr.developer.cfg
+pymba-setup/.project
+pymba-setup/.pydevproject
 
 # PyCharm
-.idea/
-.cache/
+pymba-setup/.idea/
+pymba-setup/.cache/

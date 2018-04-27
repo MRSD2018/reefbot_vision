@@ -1,0 +1,19 @@
+# camera stuff
+width: 540
+height: 410
+K: [2046.656901, 0.0, 802.943925, 0.0, 2036.041297, 472.235466, 0.0, 0.0, 1.0]
+D: [-0.470340, 1.206041, -0.005557, -0.002479, 0.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [1981.632568, 0.0, 800.827980, 0.0, 0.0, 1976.621704, 467.141610, 0.0, 0.0, 0.0, 1.0, 0.0]
+distortion_model: "narrow_stereo"
+
+print_features: 0
+
+pixel_format: "BGR8Packed"
+exposure_auto: "Off"
+exposure_time_abs: 30000
+balance_white_auto: "Off"
+balance_ratio_abs: 1.3
+saturation: 2
+binning_horizontal: 3
+binning_vertical: 3

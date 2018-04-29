@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+	<rosparam command="load" file="$(find reefbot_vision)/param/parameters.yaml" />
+
+    <!-- <include file="$(find reefbot_vision)/launch/reefbot_april.launch"/> -->
+
+    <node name="reefbot_vision" pkg="reefbot_vision" type="pymba_publisher.py" output="screen" />
+    
+    <node name="ball_in_water" pkg="ball_in_water" type="analyze_imi.py" output="screen" />
+</launch>

@@ -16,17 +16,15 @@ with Vimba() as vimba:
     #camera info
     camera_info_msg = CameraInfo();
     camera_info_msg.header.frame_id = "avt_manta";
-    camera_info_msg.width   = rospy.get_param('width') #540;
-    camera_info_msg.height  = rospy.get_param('height') #410;
-    #camera_info_msg.K = [1792.707269, 0.0, 821.895887, 0.0, 1790.871098, 624.859714, 0.0, 0.0, 1.0];
-    #camera_info_msg.D = [-0.225015, 0.358593, -0.005422, 0.009070, 0.0];
-    camera_info_msg.R       = rospy.get_param('R') #[1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0];
+    camera_info_msg.width           = rospy.get_param('width') #540;
+    camera_info_msg.height          = rospy.get_param('height') #410;
+    camera_info_msg.K               = rospy.get_param('K') #[2046.656901, 0.0, 802.943925, 0.0, 2036.041297, 472.235466, 0.0, 0.0, 1.0];
+    camera_info_msg.D               = rospy.get_param('D') #[-0.470340, 1.206041, -0.005557, -0.002479, 0.0];
+    camera_info_msg.P               = rospy.get_param('P') #[1981.632568, 0.0, 800.827980, 0.0, 0.0, 1976.621704, 467.141610, 0.0, 0.0, 0.0, 1.0, 0.0];
+    camera_info_msg.R               = rospy.get_param('R') #[1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0];
     #camera_info_msg.P = [1736.461670, 0.0, 834.094334, 0.0, 0.0, 1751.635254, 621.266132, 0.0, 0.0, 0.0, 1.0, 0.0];
     camera_info_msg.distortion_model = rospy.get_param('distortion_model') #"narrow_stereo";
     ##########
-    camera_info_msg.K = rospy.get_param('K') #[2046.656901, 0.0, 802.943925, 0.0, 2036.041297, 472.235466, 0.0, 0.0, 1.0];
-    camera_info_msg.D = rospy.get_param('D') #[-0.470340, 1.206041, -0.005557, -0.002479, 0.0];
-    camera_info_msg.P = rospy.get_param('P') #[1981.632568, 0.0, 800.827980, 0.0, 0.0, 1976.621704, 467.141610, 0.0, 0.0, 0.0, 1.0, 0.0];
 
     system = vimba.getSystem()
 

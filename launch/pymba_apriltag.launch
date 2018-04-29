@@ -2,12 +2,14 @@
 <launch>
 	<rosparam command="load" file="$(find reefbot_vision)/param/parameters.yaml" />
 
-    <include file="$(find reefbot_vision)/launch/reefbot_april.launch"/>
+    <!-- <include file="$(find reefbot_vision)/launch/reefbot_april.launch"/> -->
 
     <node name="reefbot_vision" pkg="reefbot_vision" type="pymba_publisher.py" output="screen" />
     
-    <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
-        <remap from="image" to="/avt_manta/image_raw" />
- 	<param name="autosize" value="true" />
-    </node>
+    <!-- <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen"> -->
+        <!-- <remap from="image" to="/avt_manta/image_raw" /> -->
+        <!-- <remap from="image" to="/ball_img" /> -->
+ 	<!-- <param name="autosize" value="true" /> -->
+ 		<!-- <param name="autosize" value="false" /> -->
+    <!-- </node> -->
 </launch>

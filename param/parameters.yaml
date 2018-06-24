@@ -11,7 +11,7 @@ print_features: 0
 
 pixel_format: "BGR8Packed"
 exposure_auto: "Off"
-exposure_time_abs: 20000
+exposure_time_abs: 25000
 balance_white_auto: "Off"
 balance_ratio_abs: 1.3
 saturation: 2

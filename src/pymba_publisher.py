@@ -36,8 +36,14 @@ with Vimba() as vimba:
     for cam_id in camera_ids:
         print("Camera found: ", cam_id)
         
+    # try:
+    #     c0 = vimba.getCamera(camera_ids[0])
+    #     c0.openCamera()
+    # except IndexError:
+
     c0 = vimba.getCamera(camera_ids[0])
     c0.openCamera()
+
 
     if (rospy.get_param('print_features') == 1):
         cameraFeatureNames = c0.getFeatureNames();
